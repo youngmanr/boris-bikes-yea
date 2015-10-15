@@ -11,13 +11,14 @@ class DockingStation
     @bikes = []
   end
 
-  def dock(bike)
+  def dock(bike, working=true)
     fail 'Docking station full' if full?
+    bike.working = working
     bikes << bike
   end
 
   def release_bike
-    fail 'No bikes available' if empty?
+    fail 'No bikes available' if empty? || !bikes.any? { |e|  }? { |bike| bike.working? }
     bikes.pop
   end
 
