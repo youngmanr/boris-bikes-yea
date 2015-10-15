@@ -22,6 +22,20 @@ class DockingStation
     bikes.pop
   end
 
+  def release_broken_bike
+    fail 'No bikes available' if empty?
+    broken_bike = nil
+    bikes.each do |bike|
+      if !bike.working
+        bikes.delete(bike)
+        broken_bike = bike
+        break
+      end
+    end
+    broken_bike
+  end
+
+
   private
 
   def full?
