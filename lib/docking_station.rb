@@ -18,7 +18,7 @@ class DockingStation
   end
 
   def release_bike
-    fail 'No bikes available' if empty? || !bikes.any? { |e|  }? { |bike| bike.working? }
+    fail 'No bikes available' if empty? || !bikes.any? { |bike| bike.working? }
     bikes.pop
   end
 
