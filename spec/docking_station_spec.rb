@@ -13,7 +13,7 @@ describe DockingStation do
     it 'raises an error when there are not working bikes available' do
       bike = Bike.new
       subject.dock(bike,false)
-      expect(subject.release_bike).to raise_error "No bikes available"
+      expect {subject.release_bike}.to raise_error "No bikes available"
     end
   end
 
